@@ -19,7 +19,9 @@ const App = {
   methods: {
     prev() {
       // когда нажимаем кнопку назад
-      this.activeIndex--
+      if (this.activeIndex !== 0) {
+        this.activeIndex--
+      }
     },
     reset() {
       // начать заново
@@ -48,15 +50,11 @@ const App = {
     },
     // 2. выключена ли кнопка назад
     activePrevBtn() {
-      if (this.activeIndex === 0) {
-        return true
-      }
+      return this.activeIndex === 0
     },
     // 3. находимся ли мы на последнем шаге
-    lastStep() {
-      if (this.activeIndex === this.steps.length - 1) {
-        return true
-      }
+    isLastStep() {
+      return this.activeIndex === this.steps.length - 1
     }
   }
 }

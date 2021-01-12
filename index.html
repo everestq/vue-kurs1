@@ -38,7 +38,7 @@
           <button
             class="btn primary"
             @click="nextOfFinish"
-          >{{ lastStep ? 'Закончить' : 'Вперед' }}
+          >{{ isLastStep ? 'Закончить' : 'Вперед' }}
           </button>
         </div>
         <div v-else>
